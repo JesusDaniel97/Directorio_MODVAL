@@ -9,8 +9,8 @@
     <form action="" method="post">
         <input type="search" name="nombre" id="nombre">
         <input type="search" name="apellido" id="apellido">
-        <input type="search" name="registro" id="registro">
-        <input type="search" name="municipio" id="municipio">
+        <input type="text" name="registro" id="registro">
+        <input type="text" name="municipio" id="municipio">
         <select name="estados" id="estados">
           <option value="AGUACALIENTES">AGUACALIENTES</option>
           <option value="BAJA CALIFORNIA">BAJA CALIFORNIA</option>
@@ -81,7 +81,7 @@
                                        
                                         
                                         
-                                        $query = "SELECT * FROM contactos WHERE Nombre LIKE \"%$nombre%\" AND Apellidos LIKE \"%$apellido%\" AND Registros LIKE \"%$registro%\"";
+                                        $query = "SELECT * FROM contactos WHERE Nombre LIKE '%".$nombre."%' AND Apellidos LIKE '%".$apellido."%'";
                                         //$query = "SELECT * FROM contactos WHERE Apellidos LIKE \"%$apellido%\"";    
                                         
                                         $resultado = $conexion->query($query);
@@ -106,8 +106,8 @@
                                         }
 
 
-                                            }else{
-                                            echo "no hay resultados :(";
+                                    }else{
+                                        echo "no hay resultados :(";
                                     }
                                         
                                             
